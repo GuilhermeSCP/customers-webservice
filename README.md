@@ -16,6 +16,7 @@ CREATE TABLE customers
   telephone text
 )
 ```
+You might want to change the openDatabaseConnection() function in [CustomerInterface.java](https://github.com/GuilhermeSCP/customers-webservice/blob/master/src/com/multicert/middleman/CustomerInterface.java) to change the user and password for your database.
 
 ##Instructions:
 
@@ -27,7 +28,7 @@ mvn package
 
 mvn tomcat:run
  ```
-4. Hopefully, you have the webservice up and running.
+4. Hopefully, you will have the webservice up and running on http://localhost:8080 .
 
 ##Available services
 
@@ -36,7 +37,7 @@ Get all customers in the database. Usage:
 GET http://localhost:8080/Multicert/rest/customerservice/getallcustomers
 ```
 
-Get a customer by NIF. Usage (nif must have no more no less than 9 digits):
+Get a customer by NIF. Usage (nif must have 9 digits, no more, no less):
 ```http
 GET http://localhost:8080/Multicert/rest/customerservice/getcustomerbynif?nif=<NIFnumber>
 ```
@@ -52,7 +53,7 @@ POST http://localhost:8080/Multicert/rest/customerservice/addcustomer
 {"name":"Martins","nif":"123456789","address":"Multicert","telephone":"912345678"}
 ```
 
-Deletes a customer from database. Usage (if customer doesn't exists, will return ACCEPTED deleting nothing):
+Deletes a customer from database. Usage (if customer doesn't exist, will return ACCEPTED deleting nothing):
 ```http
 POST http://localhost:8080/Multicert/rest/customerservice/deletecustomer?nif=<NIFnumber>
 ```
