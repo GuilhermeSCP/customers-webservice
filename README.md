@@ -32,27 +32,27 @@ mvn tomcat:run
 ##Available services
 
 Get all customers in the database. Usage: 
-```javascript
+```http
 GET http://localhost:8080/Multicert/rest/customerservice/getallcustomers
 ```
 
 Get a customer by NIF. Usage (nif must have no more no less than 9 digits):
-```javascript
+```http
 GET http://localhost:8080/Multicert/rest/customerservice/getcustomerbynif?nif=<NIFnumber>
 ```
 
 Get a customer by name. Usage (case insensitive, will look for similar names):
-```javascript
+```http
 GET http://localhost:8080/Multicert/rest/customerservice/getcustomerbyname?name=<name>
 ```
 
 Add a customer to the database. Usage (needs JSON with the new customer data):
-```javascript
+```http
 POST http://localhost:8080/Multicert/rest/customerservice/addcustomer
 {"name":"Martins","nif":"123456789","address":"Multicert","telephone":"912345678"}
 ```
 
 Deletes a customer from database. Usage (if customer doesn't exists, will return ACCEPTED deleting nothing):
-```javascript
+```http
 POST http://localhost:8080/Multicert/rest/customerservice/deletecustomer?nif=<NIFnumber>
 ```
