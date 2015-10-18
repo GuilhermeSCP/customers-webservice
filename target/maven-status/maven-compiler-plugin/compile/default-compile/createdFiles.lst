@@ -1,0 +1,4 @@
+com\multicert\middleman\CustomerInterface.class
+com\multicert\object\Customer.class
+com\multicert\service\RestServiceImplementation.class
+com\multicert\RestService.class
